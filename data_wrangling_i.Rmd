@@ -16,4 +16,38 @@ litters_df = read_csv("data/FAS_litters.csv")
 litters_df = janitor::clean_names(litters_df)
 ``` 
 
+Now, let's start looking at/inspecting the data.
 
+```{r}
+litters_df
+head(litters_df)
+tail(litters_df)
+```
+
+Use view to open separate window with entire dataset. Need to use `eval = FALSE` for code to knit successfully. 
+
+```{r, eval = FALSE}
+View(litters_df)
+```
+
+skim function from `skimr` package is nice way to get quick summary of entire dataset.
+```{r}
+skimr::skim(litters_df)
+```
+
+Treat empty rows, NA, 999, 88 all as missing observations(via collection)
+```{r, eval = FALSE}
+read_csv("data/FAS_litters.csv", na = c("", "NA", 999, 88))
+```
+
+If need to skip first two rows because it has info I don't want to run:
+```{r, eval = FALSE}
+read_csv("data/FAS_litters.csv", na = c("", "NA", 999, 88), skip = 2)
+```
+
+Column types — can see different variable types in tibble print-out option: 
+
+* "chr" is character variable (combination of letters and numbers) 
+* "dlbl" is double variable (all numbers)
+
+## Other file formats
