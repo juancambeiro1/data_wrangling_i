@@ -153,3 +153,26 @@ option:
 -   “dlbl” is double variable (all numbers)
 
 ## Other file formats
+
+Read in excel spreadsheet
+
+``` r
+mlb_df = read_excel("data/mlb11.xlsx")
+```
+
+``` r
+View(mlb_df)
+```
+
+Read in an excel spreadsheet, only cells B3:B6
+
+``` r
+lotr_words_df = 
+  read_excel(
+    "data/LotR_Words.xlsx", 
+    range = "B3:D6")
+```
+
+``` r
+View(lotr_words_df)
+```
