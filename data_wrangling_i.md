@@ -176,3 +176,9 @@ lotr_words_df =
 ``` r
 View(lotr_words_df)
 ```
+
+\##Data export Best to do with relative paths.
+
+``` r
+write_csv(lotr_words_df, file = "data/lotr_words_df.csv")
+```
